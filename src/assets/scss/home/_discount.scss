@@ -1,0 +1,108 @@
+.subscribe {
+    .subscribe-bg {
+      background-image: url("https://demo2.pavothemes.com/bookory/wp-content/uploads/2022/11/h6_bg1.jpg");
+      background-size: cover;
+      background-position: left;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+      padding: 75px 30px;
+      font-family: "Sora", sans-serif;
+      h4 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 44px;
+        letter-spacing: -2px;
+        color: $white;
+        span {
+          color: $primary_orange;
+        }
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $white;
+      }
+      @include form;
+      form {
+        position: relative;
+        input {
+          padding: 12px 140px 12px 25px;
+          &:focus {
+            border-color: $primary_orange;
+          }
+        }
+        button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          padding: 17px 20px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .subscribe {
+      .subscribe-bg {
+        form {
+          width: 480px !important;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 533px) {
+    .subscribe {
+      .subscribe-bg {
+        form {
+          width: 380px !important;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 475px) {
+    .subscribe {
+      .subscribe-bg {
+        padding: 75px 11px;
+        h4 {
+          font-size: 32px !important;
+        }
+        p {
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .subscribe {
+      .subscribe-bg {
+        form {
+          width: 330px !important;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 380px) {
+    .subscribe {
+      .subscribe-bg {
+        form {
+          width: 260px !important;
+          input {
+            padding: 12px 117px 12px 25px;
+            &::placeholder {
+              font-size: 12px !important;
+            }
+          }
+          button {
+            font-size: 10px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+  

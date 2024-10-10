@@ -1,0 +1,127 @@
+.book-stores {
+    font-family: sora, Sans-serif;
+    padding: 60px 0;
+    border-top: 1px solid $milk_white;
+    h3 {
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -1px;
+      color: $black;
+    }
+    .row {
+      h4 {
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 28px;
+        color: $black;
+      }
+      h6 {
+        color: $black;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 24px;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $text;
+      }
+    }
+  }
+  
+  .dark {
+    .book-stores {
+      border-top: 1px solid $text;
+      h3 {
+        color: $white;
+      }
+      .row {
+        h4 {
+          color: $white;
+        }
+        h6 {
+          color: $milk_white;
+        }
+        p {
+          color: $light_grey;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .book-stores {
+      .row {
+        .store-img {
+          width: 350px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .book-stores {
+      .row {
+        .store-img {
+          width: 300px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .book-stores {
+      .row {
+        .store-img {
+          width: 210px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .book-stores {
+      .row {
+        .store-img {
+          width: 250px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .book-stores {
+      .row {
+        [class^="col"] {
+          text-align: center;
+          .store-img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    .book-stores {
+      .row {
+        h4 {
+          font-size: 18px;
+        }
+        h6 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  

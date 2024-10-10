@@ -1,0 +1,149 @@
+.contact-form {
+    font-family: sora, Sans-serif;
+    h3 {
+      font-size: 26px;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 32px;
+      letter-spacing: -1px;
+      color: $black;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 24px;
+      color: $text;
+    }
+    @include form;
+    form {
+      div {
+        margin-bottom: 38px;
+      }
+      input,
+      textarea {
+        padding: 16px 26px;
+        &:focus {
+          border-color: $black;
+        }
+      }
+      textarea {
+        resize: none;
+      }
+      .check {
+        input {
+          width: 20px;
+          accent-color: $primary_orange;
+        }
+        label {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 24px;
+          color: $text;
+        }
+      }
+      button {
+        padding: 17px 31px;
+      }
+    }
+  }
+  
+  .dark {
+    .contact-form {
+      h3 {
+        color: $white;
+      }
+      p {
+        color: $light_grey;
+      }
+      form {
+        input,
+        textarea {
+          &:focus {
+            border-color: $text;
+          }
+        }
+        .check {
+          label {
+            color: $light_grey;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .contact-form {
+      [class^="col"] {
+        display: flex;
+        justify-content: center;
+        &:last-child {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .contact-form {
+      form {
+        width: 500px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1050px) {
+    .contact-form {
+      form {
+        width: 450px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 960px) {
+    .contact-form {
+      form {
+        width: 400px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 855px) {
+    .contact-form {
+      form {
+        width: 350px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .contact-form {
+      .row {
+        flex-direction: column-reverse;
+        [class^="col"] {
+          &:last-child {
+            margin-bottom: 20px;
+            text-align: center;
+            form {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 300px) {
+    .contact-form {
+      .row {
+        [class^="col"] {
+          &:first-child {
+              margin: 0 auto;
+              iframe {
+                width: 250px !important;
+              }
+          }
+        }
+      }
+    }
+  }
+  

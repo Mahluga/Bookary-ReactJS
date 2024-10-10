@@ -1,0 +1,40 @@
+.brands {
+    .row {
+      [class^="col"] {
+        img {
+          transition: 0.3s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  
+  .dark {
+    .brands {
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+          saturate(7440%) hue-rotate(152deg) brightness(93%) contrast(91%);
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1045px) {
+    .brands {
+      img {
+        width: 130px !important;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .brands {
+      [class ^= "col"] {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+      }
+    }
+  }
+  

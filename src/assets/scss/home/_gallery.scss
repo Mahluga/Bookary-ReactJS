@@ -1,0 +1,34 @@
+.gallery {
+    margin: 0 auto;
+    .lg-react-element {
+      text-align: center;
+    }
+    a {
+      position: relative;
+      img {
+        width: 235px;
+        height: 235px;
+        transition: 0.5s;
+        &:hover {
+          filter: grayscale(24%) sepia(29%) brightness(40%) saturate(156%)
+            contrast(109%) invert(19%);
+          & + .plus-sign {
+            span {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .plus-sign {
+        position: absolute;
+        top: -30px;
+        left: 100px;
+        color: $white;
+        span {
+          font-size: 45px;
+          opacity: 0;
+        }
+      }
+    }
+  }
+  

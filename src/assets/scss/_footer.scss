@@ -1,0 +1,214 @@
+.footer {
+    background-color: $white;
+    padding: 70px 0;
+    font-family: "Sora", sans-serif;
+    border-top: 1px solid $milk_white;
+    border-bottom: 1px solid $milk_white;
+    .info-part {
+      [class^="col"] {
+        &:first-child {
+          border-right: 1px solid $milk_white;
+          .foot-logo {
+            padding-bottom: 35px;
+          }
+          p {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 24px;
+            color: $text;
+          }
+          h4 {
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 32px;
+            letter-spacing: -1px;
+            color: $primary_orange;
+          }
+          ul {
+            li {
+              a {
+                font-size: 17px;
+                color: $light_grey;
+                transition: 0.3s;
+                &:hover {
+                  color: $primary_orange;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    [class^="col"] {
+      .foot-title {
+        color: $black;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+      }
+      ul {
+        li,
+        a {
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 24px;
+          color: $light_grey;
+        }
+        a {
+          transition: 0.3s;
+          &:hover {
+            color: $primary_orange;
+          }
+        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $black;
+      }
+    }
+  }
+  
+  .sub-footer {
+    padding: 45px 30px;
+    font-family: "Sora", sans-serif;
+    p {
+      font-size: 14px;
+      font-weight: 300;
+      color: $light_grey;
+      a {
+        color: $primary_orange;
+      }
+    }
+  }
+  
+  .dark {
+    .footer {
+      background-color: $dark_bg;
+      border-top: 1px solid $text;
+      border-bottom: 1px solid $text;
+      .info-part {
+        [class^="col"] {
+          &:first-child {
+            border-right: 1px solid $text;
+            p {
+              color: $light_grey;
+            }
+          }
+        }
+      }
+      [class^="col"] {
+        .foot-title {
+          color: $white;
+        }
+        p {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .footer {
+      .info-part {
+        [class^="col"] {
+          &:first-child {
+            p {
+              font-size: 12px;
+            }
+            h4 {
+              font-size: 25px !important;
+            }
+          }
+        }
+      }
+      [class^="col"] {
+        .foot-title {
+          font-size: 13px;
+        }
+        ul {
+          li,
+          a {
+            font-size: 12px;
+          }
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 780px) {
+    .sub-footer {
+      p {
+        font-size: 12px;
+      }
+      .bank-cards {
+        display: flex;
+        justify-content: flex-end;
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .footer {
+      [class^="col"] {
+        .resp-center {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+    .sub-footer {
+      & > div {
+        flex-direction: column;
+        p {
+          margin-bottom: 20px !important;
+        }
+      }
+      .bank-cards {
+        justify-content: center;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .footer {
+      .info-part {
+        [class^="col"] {
+          display: flex;
+          flex-direction: column;
+          align-items: center !important;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 370px) {
+    .sub-footer {
+      p {
+        font-size: 9px;
+        text-align: center;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 327px) {
+    .footer {
+      .resp-center {
+        width: 100% !important;
+        align-items: start !important;
+        padding-left: 60px;
+      }
+    }
+  }
+  

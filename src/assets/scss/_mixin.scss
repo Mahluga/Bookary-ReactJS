@@ -1,0 +1,314 @@
+@mixin form {
+    form {
+      max-width: 580px;
+      width: 580px;
+      input,
+      textarea {
+        width: 100%;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 2;
+        color: $black;
+        background-color: #fff;
+        border: 1px solid $milk_white;
+        &:focus {
+          &::placeholder {
+            color: transparent;
+          }
+        }
+        &::placeholder {
+          font-size: 13px;
+          font-weight: 300;
+          transition: 1s;
+        }
+      }
+      input {
+        border-radius: 50px;
+      }
+      textarea {
+        border-radius: 20px;
+      }
+      .form-control:focus {
+        box-shadow: none;
+      }
+      button {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.2857142857;
+        padding: 17px 20px;
+        border-radius: 50px;
+        border: none;
+        background-color: $primary_orange;
+        transition: 0.3s;
+        &:hover {
+          background-color: $primary_orange_hover;
+        }
+      }
+      :not(.btn-check) + .btn:active {
+        background-color: $primary_orange;
+      }
+    }
+  }
+  
+  @mixin sectionHeader {
+    .section-header {
+      font-family: "Sora", sans-serif;
+      h4 {
+        font-size: 33px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 44px;
+        letter-spacing: -2px;
+        color: $black;
+      }
+      .divider-line {
+        width: 100%;
+        border: 1px solid $milk_white;
+      }
+    }
+    .dark {
+      .section-header {
+        h4 {
+          color: $white;
+        }
+        .divider-line {
+          border: 1px solid $white;
+        }
+      }
+    }
+  }
+  
+  @mixin sectionHeaderDark {
+    .section-header {
+      h4 {
+        color: $white;
+      }
+      .divider-line {
+        border: 1px solid $light_grey;
+      }
+    }
+  }
+  
+  @mixin sectionBtns {
+    .section-btn {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 52px;
+      letter-spacing: 0px;
+      padding: 0px 30px;
+      border-radius: 50px;
+      background-color: $primary_orange;
+      color: $white;
+      transition: 0.3s;
+      svg {
+        fill: $white;
+      }
+      &:hover {
+        background-color: $primary_orange_hover;
+        color: $white;
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+  
+  @mixin sectionMainCards {
+    .section-main-card {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left center;
+      border-radius: 15px;
+      font-family: "Sora", sans-serif;
+      height: 395px;
+      .card-title {
+        h4 {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          color: $white;
+          margin-bottom: 10px;
+        }
+        h3 {
+          font-size: 48px;
+          font-weight: 500;
+          line-height: 58px;
+          letter-spacing: -2px;
+          color: $white;
+          margin-bottom: 0;
+        }
+      }
+      .card-foot {
+        p {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 28px;
+          color: $white;
+        }
+      }
+      span {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 24px;
+        color: $white;
+      }
+    }
+  }
+  
+  @mixin modeCards {
+    .mode-cards {
+      font-family: "Sora", sans-serif;
+      .slick-dots {
+        display: none !important;
+      }
+      .slick-arrow {
+        display: none !important;
+      }
+      .book-card {
+        border-right: 1px solid $milk_white;
+        .book-img-div {
+          position: relative;
+          span {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $primary_orange_hover;
+            background-color: $white;
+            padding: 2px 10px;
+            border: 1px dashed $primary_orange;
+            border-radius: 0 15px 0 15px;
+          }
+          .book-img {
+            cursor: pointer;
+            width: 85%;
+            border-radius: 15px;
+          }
+          .book-img-hover {
+            position: absolute;
+            bottom: 10px;
+            right: 25px;
+            transition: all 0.3s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+            button {
+              width: 40px;
+              height: 40px;
+              padding: 0;
+              border-radius: 50%;
+              border: none;
+              transition: all ease 0.3s;
+              color: $black;
+              background-color: $white;
+              .fa-solid {
+                color: $primary_orange;
+              }
+              &:hover {
+                background-color: $primary_orange;
+                color: $white;
+                &:has(.fa-solid) {
+                  background-color: $white;
+                }
+              }
+            }
+          }
+        }
+        .book-info {
+          width: 80%;
+          margin: 0 auto;
+          .book-name {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: $black;
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover {
+              color: $primary_orange;
+            }
+          }
+          .author {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1;
+            color: $light_grey;
+            transition: 0.3s;
+            &:hover {
+              color: $primary_orange;
+            }
+          }
+          .price {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: $primary_orange;
+          }
+        }
+        &:hover {
+          .book-img-hover {
+            visibility: visible;
+            opacity: 1;
+            button {
+              animation-name: hoverBtns;
+              animation-duration: 250ms;
+              animation-fill-mode: both;
+              &:nth-child(2) {
+                animation-delay: 100ms;
+              }
+              &:nth-child(3) {
+                animation-delay: 200ms;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin modeCardsDark {
+    .mode-cards {
+      .book-card {
+        border-right: 1px solid $text;
+        .book-info {
+          .book-name {
+            color: $white;
+            &:hover {
+              color: $primary_orange;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @mixin rating {
+    .rating {
+      margin: 3px 0;
+      span {
+        i {
+          font-size: 12px;
+        }
+        &:not(:last-child) {
+          i {
+            margin-right: 2px;
+          }
+        }
+      }
+      .total-star {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 4px 0 0 6px;
+      }
+    }
+  }
+  
+  @mixin ratingDark {
+    .rating {
+      .total-star {
+        color: $white;
+      }
+    }
+  }
+  

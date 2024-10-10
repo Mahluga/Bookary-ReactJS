@@ -1,0 +1,65 @@
+$primary_orange: #f65d4e;
+$primary_orange_hover: #f4402f;
+
+$text: #444444;
+$light_grey: #999999;
+
+$black: #000000;
+
+$milk_white: #e6e6e6;
+$white: #ffffff;
+
+$dark_bg: #282828;
+
+
+
+
+// some scss
+
+::selection {
+    color: $white;
+    background: $primary_orange;
+  }
+  
+  .disable-btn {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+  
+  .disable-hover {
+    pointer-events: none;
+    opacity: 0.3;
+    background-color: rgba(179, 173, 173, 0.758) !important;
+    color: $white !important;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    box-shadow: inset 0 0 5px $light_grey;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $primary_orange;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary_orange_hover;
+  }
+  
+  .loading-gif {
+    height: 100vh;
+  }
+  
+  .dark {
+    background-color: $dark_bg;
+  }
+  

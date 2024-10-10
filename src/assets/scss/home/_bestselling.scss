@@ -1,0 +1,157 @@
+.bestselling {
+    @include sectionHeader;
+    @include sectionBtns;
+    @include sectionMainCards;
+    .bestselling-main-card {
+      background-image: url("https://demo2.pavothemes.com/bookory/wp-content/uploads/2022/11/h6_banner5.jpg");
+      padding: 50px 50px 100px;
+    }
+    @include modeCards;
+    @include rating;
+  }
+  
+  .dark {
+    .bestselling {
+      @include sectionHeaderDark;
+      @include modeCardsDark;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            span {
+              right: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            span {
+              right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            .book-img-hover {
+              right: 18px !important;
+            }
+            span {
+              right: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            span {
+              right: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            .book-img-hover {
+              right: 30px !important;
+            }
+            span {
+              right: 19px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            .book-img-hover {
+              right: 40px !important;
+            }
+            span {
+              right: 33px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            span {
+              right: 29px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            .book-img-hover {
+              right: 30px !important;
+            }
+            span {
+              right: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 305px) {
+    .bestselling {
+      .mode-cards {
+        .book-card {
+          .book-img-div {
+            span {
+              right: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
