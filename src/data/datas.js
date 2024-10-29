@@ -94,7 +94,8 @@
       "category": ["Action & Adventure", "Cultural"],
       "tags": ["Books", "Fiction", "Romance - Contemporary"],
       "stock": true,
-      "sku": "13230906"
+      "sku": "13230906",
+      'mode': 'trend'
     },
     {
       "id": 4,

@@ -1,24 +1,25 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { ChevronRight } from 'react-bootstrap-icons'
-import { ShopContext } from '../../context/ShopContext'
+// import { ShopContext } from '../../context/ShopContext'
 import BookCard from '../cards/BookCard'
 import AOS from 'aos';
 import Slider from "react-slick";
 import { LinkContainer } from 'react-router-bootstrap'
 import { LangContext } from '../../context/LangContext'
+import { useSelector } from 'react-redux';
 
 const TrendingNow = () => {
-    const [books] = useContext(ShopContext)
+    const data = useSelector(p=>p);
     const [trend, setTrend] = useState([])
 
     const [lang] = useContext(LangContext);
 
     useEffect(() => {
-        const trendBooks = books.filter((item) => item.mode === "trend");
+        const trendBooks = data.filter((item) => item.mode === "trend");
         setTrend(trendBooks);
         AOS.init();
-    }, [books])
+    }, [data])
 
     const settings = {
         dots: true,

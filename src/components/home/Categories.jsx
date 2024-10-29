@@ -24,32 +24,32 @@ const Categories = () => {
                         delay: 2000,
                         disableOnInteraction: false,
                     }}
-                    // breakpoints={{
-                    //     280: {
-                    //         slidesPerView: 1,
-                    //         spaceBetween: 30,
-                    //     },
-                    //     550: {
-                    //         slidesPerView: 2,
-                    //         spaceBetween: 30,
-                    //     },
-                    //     640: {
-                    //         slidesPerView: 3,
-                    //         spaceBetween: 30,
-                    //     },
-                    //     768: {
-                    //         slidesPerView: 4,
-                    //         spaceBetween: 30,
-                    //     },
-                    //     1200: {
-                    //         slidesPerView: 5,
-                    //         spaceBetween: 30,
-                    //     },
-                    //     1440: {
-                    //         slidesPerView: 6,
-                    //         spaceBetween: 30,
-                    //     },
-                    // }}
+                    breakpoints={{
+                        280: {
+                            slidesPerView: 1,
+                            spaceBetween: 30,
+                        },
+                        550: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                        1200: {
+                            slidesPerView: 5,
+                            spaceBetween: 30,
+                        },
+                        1440: {
+                            slidesPerView: 6,
+                            spaceBetween: 30,
+                        },
+                    }}
                     className="mySwiper d-flex"
                 >
                     <SwiperSlide><CategoryCard image='https://demo2.pavothemes.com/bookory/wp-content/uploads/2022/11/h6_cat1.png' category={catCards[0]} /></SwiperSlide>

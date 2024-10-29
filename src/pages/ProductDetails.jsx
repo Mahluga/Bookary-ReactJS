@@ -1,46 +1,39 @@
-import React, { useCallback, useContext, useState } from 'react'
-import { Breadcrumb, Button, Col, Container, Row } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
-import Rating from '../components/Rating'
-import ScrolltoTop from '../components/ScrolltoTop'
-import { LinkContainer } from 'react-router-bootstrap'
-import { useCart } from 'react-use-cart'
-import { useBetween } from 'use-between'
-import BookCard from '../components/cards/BookCard'
-import { LangContext } from '../context/LangContext'
-import { useDispatch } from 'react-redux'
-import { addWish, removeWish } from '../tools/action/wishActions'
-import { ShopContext } from '../context/ShopContext'
-import SharedCanvas from '../components/SharedCanvas'
+import React, { useCallback, useContext, useState } from 'react';
+import { Breadcrumb, Button, Col, Container, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import Rating from '../components/Rating';
+import ScrolltoTop from '../components/ScrolltoTop';
+import { LinkContainer } from 'react-router-bootstrap';
+import { useCart } from 'react-use-cart';
+import { useBetween } from 'use-between';
+import { LangContext } from '../context/LangContext';
+import { useDispatch } from 'react-redux';
+// import { addWish, removeWish } from '../tools/action/wishActions';
+import SharedCanvas from '../components/SharedCanvas';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { addWish, removeWish } from '../tools/action/wishAction';
 
 const ProductDetails = () => {
-  const [books] = useContext(ShopContext);
-
+  const data = useSelector(p => p);
   const [quantity, setQuantity] = useState(1);
   const { addItem } = useCart();
   const { setShowCanvas } = useBetween(SharedCanvas);
-
   const [activeTitle, setActiveTitle] = useState(1);
-
   const random = Math.floor(Math.random() * (30 - 0 + 1)) + 0;
-
   const { id } = useParams();
-  const details = books.find((item) => item.id.toString() === id);
-
+  const details = data?.find((item) => item.id.toString() === id);
   const [lang] = useContext(LangContext);
-
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
   const local = localStorage.getItem("wish");
   const wishData = local ? JSON.parse(local).find((item) => item.id == id) : false;
-
-  const [wishStatus, setWishStatus] = useState<string>(wishData ? "solid" : "regular");
+  const [wishStatus, setWishStatus] = useState(wishData ? "solid" : "regular");
 
   const findWish = (id) => {
     const local = localStorage.getItem("wish");
     const wishData = local ? JSON.parse(local).find((item) => item.id == id) : false;
     return wishData ? true : false;
-  }
+  };
 
   const wishClick = useCallback(() => {
     if (findWish(id)) {
@@ -50,12 +43,29 @@ const ProductDetails = () => {
       dispatch(addWish(details));
       setWishStatus("solid");
     }
-  }, [])
+  }, [id, details, dispatch]);
+
+  
+  if (!data || data.length === 0) {
+    return (
+      <Container className='my-5 no-details'>
+        <div className="no-details-content d-flex align-items-center mb-3">
+          <i className="fa-regular fa-calendar me-3"></i>
+          <p className='mb-0'>{lang === "en" ? "No products available" : "Məhsul mövcud deyil"}</p>
+        </div>
+        <LinkContainer to="/shop">
+          <a href="/" className='text-decoration-none section-btn'>
+            {lang === "en" ? "Return to shop" : "Alış-verişə qayıt"}
+          </a>
+        </LinkContainer>
+      </Container>
+    );
+  }
 
   return (
     <>
       <ScrolltoTop />
-      {!details ?
+      {!details ? (
         <Container className='my-5 no-details'>
           <div className="no-details-content d-flex align-items-center mb-3">
             <i className="fa-regular fa-calendar me-3"></i>
@@ -67,7 +77,7 @@ const ProductDetails = () => {
             </a>
           </LinkContainer>
         </Container>
-        :
+      ) : (
         <Container className='details-page mb-5'>
           <div className="details-breadcrumb">
             <Breadcrumb className='pt-4 pb-3'>
@@ -83,8 +93,8 @@ const ProductDetails = () => {
               </Col>
               <Col sm={12} md={5} className='book-info'>
                 <div className="info-title">
-                  <div className={`${details.stock ? "stock-mode sale" : "stock-mode sold"}`}>
-                    {details.stock && lang === "en" ? "In Stock" : details.stock && lang === "az" ? "Stokda var" : lang === "en" ? "Sold Out" : "Tükənib"}
+                  <div className={`${details && details.stock ? "stock-mode sale" : "stock-mode sold"}`}>
+                    {details.stock ? (lang === "en" ? "In Stock" : "Stokda var") : (lang === "en" ? "Sold Out" : "Tükənib")}
                   </div>
                 </div>
                 <div className="book-title">
@@ -105,64 +115,26 @@ const ProductDetails = () => {
                   </div>
                 </div>
                 <div className="price-desc">
-                  <div className="price">${!details.price.toString().split(".")[1]
-                    ? details.price.toString().concat(".00")
-                    : details.price.toString().split(".")[1].length === 1
-                      ? details.price.toString().concat("0")
-                      : details.price}</div>
+                  <div className="price">${details.price}</div>
                   <div className="brief-desc">{details.briefDescription}</div>
                 </div>
                 <label htmlFor="quantity">{lang === "en" ? "Quantity" : "Say"}</label>
                 <div className="modal-actions d-flex justify-content-start align-items-center pt-0 mt-1">
                   <div className="modal-quantity d-flex align-items-center me-2">
-                    <button className="d-flex align-items-center justify-content-center" onClick={() => {
-                      quantity === 1 ? setQuantity(1) : setQuantity(quantity - 1);
-                    }}>-</button>
+                    <button className="d-flex align-items-center justify-content-center" onClick={() => setQuantity(quantity === 1 ? 1 : quantity - 1)}>-</button>
                     <input type="number" readOnly id="quantity" name="quantity" min="1" max="999" value={quantity} />
-                    <button className="d-flex align-items-center justify-content-center" onClick={() => { setQuantity(quantity + 1) }}>+</button>
+                    <button className="d-flex align-items-center justify-content-center" onClick={() => setQuantity(quantity + 1)}>+</button>
                   </div>
                   <div className="resp-btns d-flex align-items-center">
                     <LinkContainer to={`/shop/${details.id}`}>
                       <a href="/" className={`text-decoration-none section-btn me-2 ${details.stock ? "" : "disable-btn"}`} onClick={() => { addItem(details, quantity); setShowCanvas(true); }}>
-                        <i className="fas fa-shopping-basket"></i>  <span>&nbsp;{lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</span>
+                        <i className="fas fa-shopping-basket"></i>  <Link to='/cart'>&nbsp;{lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</Link>
                       </a>
                     </LinkContainer>
-                    <Button variant="none" className="detail-wish d-flex align-items-center" onClick={() => { wishClick() }}>
+                    <Button variant="none" className="detail-wish d-flex align-items-center" onClick={wishClick}>
                       <i className={`fa-${wishStatus} fa-heart me-1`}></i>
-                      <span>{lang === "en" ? "Add to wishlist" : "Bəyənilənlərə əlavə et"}</span>
+                      <Link to='/wishlist'>{lang === "en" ? "Add to wishlist" : "Bəyənilənlərə əlavə et"}</Link>
                     </Button>
-                  </div>
-                </div>
-                <div className="modal-cat-tag">
-                  <div className="categories d-flex align-items-start">
-                    <span>{lang === "en" ? "Categories" : "Kateqoriyalar"}: </span>
-                    <div className="list ms-2 d-flex flex-wrap">
-                      {details.category.map((item, id) => {
-                        return (
-                          <>
-                            <LinkContainer to="/shop">
-                              <span className="d-inline">{item}{item === details.category[details.category.length - 1] ? "" : ','}</span>
-                            </LinkContainer>
-                            <span style={{ whiteSpace: 'pre-wrap' }}> </span>
-                          </>
-                        )
-                      })}
-                    </div>
-                  </div>
-                  <div className="tags d-flex align-items-start">
-                    <span>{lang === "en" ? "Tags" : "Etiketlər"}: &nbsp;</span>
-                    <div className="list ms-2 d-flex flex-wrap">
-                      {details.tags.map((item, id) => {
-                        return (
-                          <>
-                            <LinkContainer to="/shop">
-                              <span className="d-inline">{item}{item === details.tags[details.tags.length - 1] ? "" : ","}</span>
-                            </LinkContainer>
-                            <span style={{ whiteSpace: 'pre-wrap' }}> </span>
-                          </>
-                        )
-                      })}
-                    </div>
                   </div>
                 </div>
               </Col>
@@ -172,7 +144,6 @@ const ProductDetails = () => {
             <div className="data-titles d-flex justify-content-center">
               <h3 className={`mb-0 ${activeTitle === 1 ? "active-title" : ""}`} onClick={() => { setActiveTitle(1) }}>{lang === "en" ? "Description" : "Təsvir"}</h3>
               <h3 className={`mb-0 ${activeTitle === 2 ? "active-title" : ""}`} onClick={() => { setActiveTitle(2) }}>{lang === "en" ? "Reviews" : "Rəylər"}(5)</h3>
-              <h3 className={`mb-0 ${activeTitle === 3 ? "active-title" : ""}`} onClick={() => { setActiveTitle(3) }}>{lang === "en" ? "Vendor Info" : "Satıcı Haqqında"}</h3>
             </div>
             <div className="data-content">
               <div className={`desc-data ${activeTitle === 1 ? "d-block" : "d-none"}`}>
@@ -186,7 +157,7 @@ const ProductDetails = () => {
                       <Rating star={3} count={0} />
                       <div className="person-name d-flex align-items-center">
                         <h4 className='me-2 mb-0'>Join Hiddleston</h4>
-                        <span>February 15, 2022</span>
+                        <span>October 10, 2024</span>
                       </div>
                     </div>
                   </div>
@@ -201,7 +172,7 @@ const ProductDetails = () => {
                       <Rating star={3} count={0} />
                       <div className="person-name d-flex align-items-center">
                         <h4 className='me-2 mb-0'>Kenneth R. Myers </h4>
-                        <span>February 15, 2022</span>
+                        <span>October 11, 2024</span>
                       </div>
                     </div>
                   </div>
@@ -216,7 +187,7 @@ const ProductDetails = () => {
                       <Rating star={4} count={0} />
                       <div className="person-name d-flex align-items-center">
                         <h4 className='me-2 mb-0'>Mike Addington</h4>
-                        <span>February 15, 2022</span>
+                        <span>October 10, 2024</span>
                       </div>
                     </div>
                   </div>
@@ -231,7 +202,7 @@ const ProductDetails = () => {
                       <Rating star={5} count={0} />
                       <div className="person-name d-flex align-items-center">
                         <h4 className='me-2 mb-0'>Ervin Arlington</h4>
-                        <span>February 15, 2022</span>
+                        <span>October 15, 2024</span>
                       </div>
                     </div>
                   </div>
@@ -246,7 +217,7 @@ const ProductDetails = () => {
                       <Rating star={5} count={0} />
                       <div className="person-name d-flex align-items-center">
                         <h4 className='me-2 mb-0'>Patrick M. Newman</h4>
-                        <span>February 15, 2022</span>
+                        <span>October 18, 2024</span>
                       </div>
                     </div>
                   </div>
@@ -255,35 +226,13 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className={`vendor-data ${activeTitle === 3 ? "d-block" : "d-none"}`}>
-                <div className="name">{lang === "en" ? "Store Name" : "Mağaza Adı"}: <span>{details.vendorInfo.storeName}</span></div>
-                <div className="vendor">{lang === "en" ? "Vendor" : "Satıcı"}: <span>{details.vendorInfo.vendor}</span></div>
-                <div className="address">{lang === "en" ? "Address" : "Ünvan"}: <span>{details.vendorInfo.address}</span></div>
-                <div className="rate d-flex align-items-center"><span className='me-3'>{details.vendorInfo.rating} {lang === "en" ? "rating from" : "reytinq"} {details.vendorInfo.review} {lang === "en" ? "reviews" : "rəydən"}</span> <Rating star={details.vendorInfo.rating} count={0} /></div>
-              </div>
             </div>
           </div>
-          <div className="section-header mb-4">
-            <div className="row">
-              <div className="col-8 col-sm-4 col-md-3">
-                <h4 className='mb-0'>{lang === "en" ? "Related products" : "Əlaqəli məhsullar"}</h4>
-              </div>
-              <div className="col-4 col-sm-8 col-md-9 d-flex justify-content-center align-items-center">
-                <div className="divider-line"></div>
-              </div>
-            </div>
-          </div>
-          <Row className='mode-cards gy-4'>
-            {books.slice(random, random + 6).map((item) => {
-              return (<Col sm={6} md={2} className='px-0 detail-mode'>
-                <BookCard key={item.id} item={item} id={item.id} image={item.image} title={item.title} author={item.author} price={item.price} star={item.star} category={item.category} tags={item.tags} cutTitle={true} flexStyle='flex-column' briefDesc={item.briefDescription} listChange={false} stock={item.stock}/>
-              </Col>)
-            })}
-          </Row>
         </Container>
-      }
+      )}
     </>
-  )
-}
+  );
+};
+
 
 export default ProductDetails

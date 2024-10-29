@@ -14,4 +14,3 @@ export const addWish = ({ id, image, title, price, storeWish, stock }) => ({
     type: "REMOVE_WISH",
     id,
   });
-  

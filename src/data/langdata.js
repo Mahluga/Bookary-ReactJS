@@ -1,8 +1,8 @@
 // Header
 export const menu_cat_en = ["Action & Adventure", "Arts & Photography", "Contemporary", "Foreign Language", "Genre Fiction", "Historical"];
 export const menu_cat_az = ["Fəaliyyət və macəra", "İncəsənət & Fotoqrafiya", "Müasir", "Xarici dil", "Janr fantastika", "Tarixi"];
-export const menu_en = ["Home", "Shop", "Vendor", "Blog", "About", "Contact"];
-export const menu_az = ["Ana səhifə", "Mağaza", "Satıcı", "Bloq", "Haqqımızda", "Əlaqə"];
+export const menu_en = ["Home", "Shop", "Vendor", "Blog", "About", "Contact","FAQ"];
+export const menu_az = ["Ana səhifə", "Mağaza", "Satıcı", "Bloq", "Haqqımızda", "Əlaqə", "FAQ"];
 
 // * Home Page
 // Carousel

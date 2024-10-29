@@ -1,44 +1,55 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
-import 'aos/dist/aos.css';
+import ReactDOM from 'react-dom'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle';
 import App from './App'
-import { ShopProvider } from './context/ShopContext'
 import './assets/scss/style.scss';
-// import { Provider } from 'react-redux'
-// import configureStore from './tools/store/configureStore';
-// // import { Provider } from 'react-redux'
-// import shopStore from './tools/store/shopStore'
+import shopStore from './tools/store/shopStore'
+import { Provider } from 'react-redux';
+import supabase from './supabase/clientSupabase'
+import { addProduct } from './tools/action/shopAction';
+import { CartProvider } from 'react-use-cart';
+import { WishlistProvider } from 'react-use-wishlist';
 
+const store = shopStore();
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   document.getElementById('root')
-// );
+store.subscribe(() => {
+  console.log(store.getState());
+})
+const fetchData = async () => {
+  const { data, error } = await supabase.from('products').select()
+  if (error) {
+    console.log(error);
+  } else {
+    data.map(item => (
+      store.dispatch(addProduct({
+        id: item.id,
+        image: item.image,
+        title: item.title,
+        description: item.description,
+        price: item.price,
+        category: item.category,
+        author: item.author,
+        stock: item.stock,
+        star: item.star,
+        briefDescription: item.briefDescription,
+        storeWish: item.storeWish,
+        tags: item.tags,
+        sku: item.sku,
+        mode: item.sku
+      }))
 
-// const store = shopStore();
-
-// const store = configureStore();
-
-// const result = (
-//   <Provider store={store}>
-//     <App />
-//   </Provider>
-// );
+    ))
+  }
+}
+fetchData();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ShopProvider>
-      <App />
-    </ShopProvider>
-  </React.StrictMode>,
+  <CartProvider>
+    <WishlistProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </WishlistProvider>
+  </CartProvider>
 )
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <Provider store={store}><App /></Provider>
-//   </React.StrictMode>
-// )

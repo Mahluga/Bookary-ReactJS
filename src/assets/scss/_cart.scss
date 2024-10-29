@@ -1,0 +1,37 @@
+.add-cart {
+    @include sectionBtns;
+    h5 {
+      font-size: 18px;
+      font-weight: 300;
+      color: $black;
+      background-color: transparent;
+      border: none;
+    }
+  }
+ .add-cart-btn{
+  width: 275px !important;
+  text-decoration: none;
+  font-size: 13px !important;
+ }
+  .dark {
+    .add-cart {
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+          saturate(7440%) hue-rotate(152deg) brightness(93%) contrast(91%);
+      }
+      h5 {
+        color: $white;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 396px) {
+    .add-cart {
+     .empty-icon {
+      img {
+        width: 200px !important;
+      }
+     }
+    }
+  }
+  

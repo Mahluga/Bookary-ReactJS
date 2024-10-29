@@ -733,7 +733,7 @@
     }
     #menu-nav {
       .categories {
-        width: 190px;
+        width: 135px;
         .cat-relative {
           svg {
             &:nth-child(2) {
@@ -852,13 +852,14 @@
       }
       .navbar-nav {
         .nav-link {
-          font-size: 15px;
+          font-size: 10px;
         }
       }
       .admin-panel-icons {
-        display: none;
+        font-size: 6px;
       }
       &:has(.normal) {
+        
         .nav-link {
           font-size: 11px;
         }
@@ -888,12 +889,15 @@
     #menu-nav {
       .navbar-nav {
         .nav-link {
-          font-size: 12px;
+          font-size: 9px;
           padding: 0 !important;
         }
       }
       .admin-panel-icons {
-        display: none;
+        font-size: 0.5px;
+        p{
+          display: none;
+        }
       }
     }
   }
@@ -962,4 +966,18 @@
       }
     }
   }
-  
+  .header-btn2{
+    text-decoration: none;
+    color: $black;
+  }
+  .dark{
+    .header-btn2{
+      text-decoration: none;
+      color: $milk_white;
+    }
+  }
+  .dropdown{
+    span{
+      font-size: 10px !important;
+    }
+  }

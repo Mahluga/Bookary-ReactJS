@@ -50,3 +50,67 @@
 // }
 
 // export default Dashboard
+
+
+
+
+
+
+
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+// import { deleteProductToDatabase } from '../../tools/actions/shopAction';
+import slugify from 'slugify';
+import { deleteProductToDatabase } from '../tools/action/shopAction';
+import { MdOutlineDelete } from "react-icons/md";
+import { MdOutlineEdit } from "react-icons/md";
+
+function Dashboard() {
+
+
+  const data = useSelector(p => p);
+  const dispatch = useDispatch();
+  return (
+    <>
+      <div className="dashboard">
+        <div className='container '>
+          <Link to="/dashboard/add" className='dashboard-btn btn mt-4 mb-4'>Add</Link>
+          <div className="table-responsive">
+            <table className='table table-striped  '>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Photo</th>
+                  <th>Title</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((item, c) => (
+                  <tr key={item.id}>
+                    <td>{c + 1}</td>
+                    <td><img width={100} src={item.image} alt={item.title} /></td>
+                    <td>{item.title}</td>
+                    <td>${item.price}</td>
+                    <td>{item.category}</td>
+                    <td>{item.description.slice(0,20)}...</td>
+                    <td><Link to={`/dashboard/edit/${slugify(item.title)}`} className='dashboard-btn btn'><MdOutlineEdit /></Link></td>
+                    <td><button onClick={() => { dispatch(deleteProductToDatabase(item.id)) }} className='dashboard-btn btn'><MdOutlineDelete /></button></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </>
+  );
+}
+
+export default Dashboard;

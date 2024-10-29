@@ -1,0 +1,25 @@
+.succesful{
+    h1{
+    color: $primary_orange;
+}
+
+}.home-btn{
+    background-color: $primary_orange;
+    color: $milk_white;
+    font-weight: 500;
+}
+.home-btn:hover{
+    background-color: $primary_orange_hover;
+    color: $milk_white;
+    font-weight: 400;
+}
+.home-btn-to:hover{
+    background-color: $milk_white;
+    color: $primary_orange_hover;
+    font-weight: 700;
+}
+.home-btn-to{
+    background-color: $milk_white ;
+    color: $primary_orange;
+    font-weight: 600;
+}

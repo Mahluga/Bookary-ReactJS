@@ -31,3 +31,17 @@
 @import './contact/bookstores';
 @import './contact/formpart';
 @import './blog/blogpart';
+@import './faq';
+@import './wishlist';
+@import './cart';
+@import './cards/shoppingcards';
+@import './blog';
+@import './notFound';
+@import './succesfulcheckout';
+
+.preloader{ 
+    background-color: grey;
+}
+.mySwiper{
+    overflow: hidden;
+}

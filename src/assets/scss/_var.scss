@@ -32,28 +32,35 @@ $dark_bg: #282828;
     background-color: rgba(179, 173, 173, 0.758) !important;
     color: $white !important;
   }
-  
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
+  .dashboard-btn{
+    background-color: $primary_orange;
+    color: $milk_white;
   }
+  .dashboard-btn:hover{
+    background-color: $primary_orange_hover;
+    color: $milk_white;
+  }
+  /* width */
+  // ::-webkit-scrollbar {
+  //   width: 8px;
+  // }
   
   /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    box-shadow: inset 0 0 5px $light_grey;
-  }
+  // ::-webkit-scrollbar-track {
+  //   background: #f1f1f1;
+  //   box-shadow: inset 0 0 5px $light_grey;
+  // }
   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $primary_orange;
-    border-radius: 10px;
-  }
+  // /* Handle */
+  // ::-webkit-scrollbar-thumb {
+  //   background: $primary_orange;
+  //   border-radius: 10px;
+  // }
   
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: $primary_orange_hover;
-  }
+  // ::-webkit-scrollbar-thumb:hover {
+  //   background: $primary_orange_hover;
+  // }
   
   .loading-gif {
     height: 100vh;

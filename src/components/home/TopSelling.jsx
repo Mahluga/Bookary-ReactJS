@@ -2,17 +2,18 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { ChevronRight } from 'react-bootstrap-icons'
 import { LinkContainer } from 'react-router-bootstrap'
-import {ShopContext} from '../../context/ShopContext' ;
+// import {ShopContext} from '../../context/ShopContext' ;
 import { LangContext } from '../../context/LangContext'
 import Rating from '../Rating';
+import { useSelector } from 'react-redux'
 
 const TopSelling = () => {
-    const [books] = useContext(ShopContext);
+    const data = useSelector(p=>p);
 
-    const [barone, setBarone] = useState(books)
-    const [greg, setGreg] = useState(books)
-    const [arlene, setArlene] = useState(books)
-    const [house, setHouse] = useState(books)
+    const [barone, setBarone] = useState(data)
+    const [greg, setGreg] = useState(data)
+    const [arlene, setArlene] = useState(data)
+    const [house, setHouse] = useState(data)
 
     const [lang] = useContext(LangContext);
     // useEffect(() => {

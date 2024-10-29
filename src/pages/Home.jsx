@@ -1,9 +1,7 @@
 import React from 'react'
-import '../data/langdata'
-import '../assets/scss/style.scss'
 import ScrolltoTop from '../components/ScrolltoTop'
 import CarouselPart from '../components/home/CarouselPart'
-// import Categories from '../components/home/Categories'
+import Categories from '../components/home/Categories'
 import SaleCards from '../components/home/SaleCards'
 import Suggestions from '../components/home/Suggestions'
 import TopSelling from '../components/home/TopSelling'
@@ -20,13 +18,13 @@ const Home = () => {
     <>
       <ScrolltoTop />
       <CarouselPart />
-      {/* <Categories /> */}
+      <Categories />
       <SaleCards />
       <TopSelling />
       <BiggestSale />
       <FavouriteReading />
-      {/* <TrendingNow /> */}
-      {/* <Bestselling /> */}
+      {/* <TrendingNow />
+      <Bestselling /> */}
       <Brands />
       <Discount />
       <Gallery />

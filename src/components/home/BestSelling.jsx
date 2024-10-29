@@ -1,24 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { ChevronRight } from 'react-bootstrap-icons'
-import { ShopContext } from '../../context/ShopContext'
 import AOS from 'aos';
 import Slider from "react-slick";
 import BookCard from '../cards/BookCard';
 import { LinkContainer } from 'react-router-bootstrap';
 import { LangContext } from '../../context/LangContext';
+import { useSelector } from 'react-redux';
 
 const Bestselling = () => {
-    const [books] = useContext(ShopContext)
+    const data = useSelector(p=>p);
     const [best, setBest] = useState([])
 
     const [lang] = useContext(LangContext);
 
     useEffect(() => {
-        const bestBooks = books.filter((item) => item.mode === "best");
+        const bestBooks = data.filter((item) => item.mode === "best");
         setBest(bestBooks);
         AOS.init()
-    }, [books])
+    }, [data])
 
     const settings = {
         dots: true,
