@@ -22,11 +22,11 @@ const FAQ = () => {
             <ScrolltoTop />
             <BreadCrumb page={lang === "en" ? "FAQs" : "FAQs"} />
             <div>
-                <section className='question-part text-center '>
+                <section className='container question-part text-center '>
                     <h1>Frequently Ask Question</h1>
-                    <div className="row d-flex justify-content-center align-items-center">
-                        <div className="col-6 ">
-                            <ul className='questions my-4'>
+                     <div className="row d-flex justify-content-center align-items-center">
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-6">
+                            <ul className='questions my-4 text-center'>
                                 <li className='d-flex align-items-center justify-content-between' onClick={() => toggleInfo(1)}>
                                     Is it safe to pay by credit card?
                                     <button className="toggle-button">{isVisible === 1 ? '-' : '+'}</button>
@@ -93,7 +93,7 @@ const FAQ = () => {
 
                             </ul>
                         </div>
-                    </div>
+                    </div> 
                 </section>
             </div>
         </>

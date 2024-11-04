@@ -14,6 +14,20 @@
   font-size: 13px !important;
  }
   .dark {
+    .shop-cart-items{
+      background-color: $dark_bg !important;
+    }
+    table{
+      tbody{
+        background-color: $dark_bg !important;
+      }
+      thead{
+        background-color: $dark_bg !important;
+      }
+      th{
+        background-color: $dark_bg !important;
+      }
+    }
     .add-cart {
       img {
         filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
@@ -34,4 +48,16 @@
      }
     }
   }
-  
+  .dark{
+    table {
+      background-color: $dark_bg !important;
+      th {
+        color: $white;
+        background-color: $dark_bg !important;
+      }
+      td {
+        color: $light_grey;
+        background-color: $dark_bg !important;
+      }
+    }
+  }

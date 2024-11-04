@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ClientCards from '../components/cards/ClientCards'
-import { cli_az, cli_en, story_en } from '../data/langdata'
+import { cli_az, cli_en, story_az, story_en } from '../data/langdata'
 import { ChevronRight } from 'react-bootstrap-icons'
 
 const About = () => {

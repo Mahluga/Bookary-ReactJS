@@ -312,7 +312,7 @@ const Products = () => {
               <div className="categories price-filter d-flex flex-column align-items-start">
                 <Slider value={range} onChange={priceChanges} />
                 <div className="range-show">{lang === "en" ? "Price" : "Qiymət"}: <span>${range[0] === 0 ? 10 : range[0] * 10}</span> - <span>${range[1] * 10}</span></div>
-                <p className="text-decoration-underline mb-0" onClick={() => { filterPrice(); setAuthors(undefined); setCategory(undefined); setRateBooks(undefined); setActiveCat(null) }}>{lang === "en" ? "Filter" : "Filtrlə"}</p>
+                <button className="btn btn-filter mb-0" onClick={() => { filterPrice(); setAuthors(undefined); setCategory(undefined); setRateBooks(undefined); setActiveCat(null) }}>{lang === "en" ? "Filter" : "Filtrlə"}</button>
               </div>
             </div>
             <div className={`shop-category mb-4 ${filterResp}`}>

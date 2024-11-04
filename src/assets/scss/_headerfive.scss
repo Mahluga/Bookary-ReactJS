@@ -1,4 +1,8 @@
 #top-nav {
+  .darklgn{
+    color: #000;
+    margin-top: 5px !important;
+  }
     border-bottom: 1px solid $milk_white;
     font-family: "Sora", sans-serif;
     background-color: $white;
@@ -419,6 +423,11 @@
   }
   
   #menu-nav {
+    // .flexhome{
+    //   // line-height: 3px;
+    //   display: flex !important;
+    //   justify-content: space-around;
+    // }
     font-family: "Sora", sans-serif;
     border-bottom: 1px solid $milk_white;
     background-color: $white;
@@ -547,16 +556,20 @@
       }
     }
   }
-  
+
   .dark {
+    .darklgn{
+      color: white !important;
+      margin-top: 6px !important;
+    }
     #top-nav {
-      background-color: $milk_white;
+      background-color: rgb(102, 100, 100);
       border-bottom: 1px solid $text;
       .navbar-nav {
         .mode-btn {
-          background-color: rgba(26, 228, 239, 0.743);
+          background-color: $milk_white;
           svg {
-            color: rgb(223, 223, 44);
+            color: rgb(248, 172, 7);
           }
           padding: 3px 18px;
         }
@@ -719,6 +732,10 @@
   }
   
   @media screen and (max-width: 1200px) {
+    .flexhome{
+      display: flex !important;
+      width: 30px;
+    }
     #search-nav {
       .search-and-panel {
         form {
@@ -744,7 +761,10 @@
             }
           }
           .main-part {
-            font-size: 12px;
+            font-size: 10px;
+            .catmt{
+              width: 15px !important;
+            }
           }
         }
         .category-hover {
@@ -894,7 +914,7 @@
         }
       }
       .admin-panel-icons {
-        font-size: 0.5px;
+      display: none;
         p{
           display: none;
         }
@@ -979,5 +999,7 @@
   .dropdown{
     span{
       font-size: 10px !important;
+      margin-top: -5px !important;
     }
   }
+  

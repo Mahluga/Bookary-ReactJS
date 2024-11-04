@@ -32,5 +32,5 @@ export const shop_cat_en = ["Action & Adventure", "Activity Books", "Animals", "
 export const shop_cat_az = ["Fəaliyyət & macəra", "Fəaliyyət kitabları", "Heyvanlar", "Antologiyalar", "İncəsənət & ədəbiyyat", "Maşınlar & yük maşınları", "Klassiklər", "Müasir", "Mədəni", "Avropa", "Xarici dil", "Janr fantastika", "Tarixi", "Kateqoriyasız"]
 
 // Footer
-export const footer_en = ["Contact info", "Explore", "About Us", "Sitemap", "Bookmarks", "Sign in/Join", "Our service", "Help Center", "Returns", "Product Recalls", "Accessibility", "Contact Us", "Store Pickup", "Categories", "Action", "Comedy", "Drama", "Horror", "Kids"]
-export const footer_az = ["Əlaqə məlumatı", "Kəşf et", "Haqqımızda", "Sayt xəritəsi", "Əlfəcinlər", "Daxil ol/Qoşul", "Xidmətimiz", "Yardım Mərkəzi", "Qaytarmalar", "Məhsulun Geri Qaytarılması", "Əlçatımlılıq", "Bizimlə əlaqə saxlayın", "Mağazadan götürmə", "Kateqoriyalar", "Fəaliyyət", "Komediya", "Dram", "Dəhşət", "Uşaqlar"]
+export const footer_en = ["Contact info", "Explore", "About Us", "Cart", "Shop", "Sign in/Join", "Our service", "Help Center", "Returns", "Product Recalls", "Accessibility", "Contact Us", "Store Pickup", "Categories", "Action", "Comedy", "Drama", "Horror", "Kids"]
+export const footer_az = ["Əlaqə məlumatı", "Kəşf et", "Haqqımızda", "Səbət", "Magaza", "Daxil ol/Qoşul", "Xidmətimiz", "Yardım Mərkəzi", "Qaytarmalar", "Geri Qaytarılma", "Əlçatımlılıq", "Bizimlə əlaqə saxlayın", "Mağazadan götürmə", "Kateqoriyalar", "Fəaliyyət", "Komediya", "Dram", "Dəhşət", "Uşaqlar"]

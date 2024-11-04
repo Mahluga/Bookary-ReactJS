@@ -888,11 +888,20 @@ import { useCart } from 'react-use-cart';
 import { useBetween } from 'use-between';
 import SharedCanvas from '../SharedCanvas';
 import { Basket } from 'react-bootstrap-icons';
+import { toast } from 'react-toastify';
 
 const WishListCard = ({ item, onRemove }) => {
     const [lang] = useContext(LangContext);
     const { addItem } = useCart();
     const { setShowCanvas } = useBetween(SharedCanvas);
+
+    const handleAddToCart = () => {
+        addItem(item); 
+        toast.success('Product added to cart!', {
+          position: "top-right",
+          autoClose: 2000,
+        });
+    };
 
     const handleRemove = (e) => {
         e.preventDefault();
@@ -921,7 +930,7 @@ const WishListCard = ({ item, onRemove }) => {
                             setShowCanvas(true); 
                         }}
                     >
-                        <Basket /> <span>&nbsp; {lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</span>
+                        <Basket /> <span onClick={handleAddToCart}>&nbsp; {lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</span>
                     </a>
                 </LinkContainer>
             </td>

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Home from '../pages/Home'
 import Login from '../pages/auth/Login'
+import AdminLogin from '../pages/auth/AdminLogin'
 import Register from '../pages/auth/Register'
 import Header from '../components/Header'
 import Blog from '../pages/Blog'
@@ -49,6 +50,7 @@ const Routers = () => {
                     <Route path='/checkout' element={<Checkout />}></Route>
                     <Route path='/succesfulcheckout' element={<SuccesfulCheckOut />}></Route>
                     <Route path='/*' element={<NotFound />}></Route>
+                    <Route path='/adminlogin' element={<AdminLogin />}></Route>
                 </Routes>
                 <Footer />
             </BrowserRouter>

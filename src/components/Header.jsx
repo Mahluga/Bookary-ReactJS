@@ -276,7 +276,7 @@ const Header = () => {
                          <div className="categories d-flex justify-content-between align-items-center">
                             <div className="cat-relative d-flex justify-content-between align-items-center w-100">
                                 <div className="main-part d-flex justify-content-center align-items-center">
-                                    <Grid3x3Gap className='me-2' fontSize={18} /> {lang === "en" ? "Categories" : "Kateqoriyalar"}
+                                    <Grid3x3Gap className='me-2 catmt' fontSize={18} /> {lang === "en" ? "Categories" : "Kateqoriyalar"}
                                 </div>
                                 <ChevronDown fontSize={10} />
                                 <ChevronUp fontSize={10} />
@@ -337,7 +337,7 @@ const Header = () => {
                         </div>
                         <Nav className="menus my-2 my-lg-0" style={{ maxHeight: '100px' }}>
                             <LinkContainer to="/">
-                                <Nav.Link className='me-4'>{menuData[0]}</Nav.Link>
+                                <Nav.Link className='flexhome me-4'>{menuData[0]}</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to="/shop">
                                 <Nav.Link className='me-4'>{menuData[1]}</Nav.Link>
@@ -374,7 +374,7 @@ const Header = () => {
                                         {isAdmin ? (
                                 <div className="dropdown">
                                     <button className="btn dropdown d-flex flex-column align-items-center justify-content-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                   <Person fontSize={18} /> <span>Mahluga</span> 
+                                   <Person fontSize={18} className='darklgn' /> <span className='spanlog'>Admin</span> 
                                     </button>
                                     <ol className="dropdown-menu custom-dropdown-width mt-1 w-25">
                                         <li><button className="btn ms-2" onClick={logout}><CiLogout />{lang === "en" ? "Log Out" : "Çıxış"}</button></li>
@@ -383,7 +383,7 @@ const Header = () => {
                             ) : isLoggedIn ? (
                                 <div className="dropdown">
                                     <button className="btn dropdown d-flex flex-column align-items-center justify-content-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <Person fontSize={18} /> <span>{localStorage.getItem('username')}</span>
+                                    <Person className='darklgn' fontSize={18} /> <span>{localStorage.getItem('username')}</span>
                                     </button>
                                     <ol className="dropdown-menu custom-dropdown-width mt-1 w-25">
                                         <li><button className="btn ms-4" onClick={logout}><CiLogout fontSize={20}/>{lang === "en" ? "Log Out" : "Çıxış "}</button></li>
@@ -391,7 +391,7 @@ const Header = () => {
                                 </div>
                             ) : (
                                   <LinkContainer to="/login">
-                                         <a href="/"><Person fontSize={18} /></a>
+                                         <a href="/"><Person  className='darklgn' fontSize={18} /></a>
                                     </LinkContainer>
                             )}
                                 </li>

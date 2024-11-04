@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
+
 const Preloader = () => {
     const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +23,7 @@ const Preloader = () => {
         <>
             {isLoading && (
                 <div id="preloader" className='preloader d-flex align-items-center justify-content-center'>
-                    <img src="https://htmlburger.com/blog/wp-content/uploads/2021/07/The-Best-50-Website-Preloaders-Around-the-Web-Example-27.gif" alt="" />
+                    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGx1bzk5czhveDNmOWU5MzZqMm40b3Y1cm9lNXRwd3QybmEydmJvOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/J8Dzurp032sOQxLE6c/giphy.gif" alt="" />
                 </div>
             )}
         </>

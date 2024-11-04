@@ -65,29 +65,31 @@ import slugify from 'slugify';
 import { deleteProductToDatabase } from '../tools/action/shopAction';
 import { MdOutlineDelete } from "react-icons/md";
 import { MdOutlineEdit } from "react-icons/md";
+import { useContext } from 'react';
+import {LangContext} from '../context/LangContext';
 
 function Dashboard() {
 
-
+const [lang] = useContext(LangContext);
   const data = useSelector(p => p);
   const dispatch = useDispatch();
   return (
     <>
       <div className="dashboard">
         <div className='container '>
-          <Link to="/dashboard/add" className='dashboard-btn btn mt-4 mb-4'>Add</Link>
+          <Link to="/dashboard/add" className='dashboard-btn btn mt-4 mb-4'>{lang === "en" ? "Add" : "Əlavə et"}</Link>
           <div className="table-responsive">
             <table className='table table-striped  '>
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Photo</th>
-                  <th>Title</th>
-                  <th>Price</th>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th>{lang === "en" ? "Photo" : "Şəkil"}</th>
+                  <th>{lang === "en" ? "Title" : "Başlıq"}</th>
+                  <th>{lang === "en" ? "Price" : "Qiymət"}</th>
+                  <th>{lang === "en" ? "Category" : "Kateqoriya"}</th>
+                  <th>{lang === "en" ? "Description" : "Təsvir"}</th>
+                  <th>{lang === "en" ? "Edit" : "Redaktə"}</th>
+                  <th>{lang === "en" ? "Delete" : "Sil"}</th>
                 </tr>
               </thead>
               <tbody>

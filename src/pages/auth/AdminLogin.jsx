@@ -2,6 +2,10 @@ import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import supabase from '../../supabase/clientSupabase';
 import Swal from 'sweetalert2';
+import ScrolltoTop from '../../components/ScrolltoTop';
+import BreadCrumb from '../../components/BreadCrumb';
+import { useContext } from 'react';
+import { LangContext } from '../../context/LangContext';
 
 
 const adminuser = {
@@ -9,7 +13,7 @@ const adminuser = {
   password: "jalil24"
 }
 const AdminLogin = () => {
-
+  const [lang] = useContext(LangContext)
   const emailRef = useRef(null);
   const passRef = useRef(null);
   const navigate = useNavigate();
@@ -61,19 +65,8 @@ const AdminLogin = () => {
 
   return (
     <>
-      <section className='page-img'>
-        <div className="container">
-          <div className="page-heading center">
-            <h1 className='mb-3'>Login</h1>
-            <p>
-              <Link to='/' className='home-link'>
-                Home <i className="fa-solid fa-greater-than"></i>
-              </Link>
-              <span>Login</span>
-            </p>
-          </div>
-        </div>
-      </section>
+ <ScrolltoTop />
+ <BreadCrumb page={lang === "en" ? "Admin Login" : "Admin Girişi"} />
       <div className="hero">
         <div className='container d-flex justify-content-center align-items-center flex-column'>
           <div className="col-4 my-5">

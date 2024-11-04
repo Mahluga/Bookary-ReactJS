@@ -1,11 +1,20 @@
 import React, { useState } from 'react'
+import { useContext } from 'react';
 import { Container } from 'react-bootstrap'
 import { BoxSeam, CalendarRange, Gift, Handbag, Truck } from 'react-bootstrap-icons'
+import { LangContext } from '../../context/LangContext';
+import { useEffect } from 'react';
+import { opp_card_az, opp_card_en } from '../../data/langdata';
 
 
 const Suggestions = () => {
-    
+    const [lang] = useContext(LangContext);
     const [oppCard, setOppCard] = useState([])
+    useEffect(() => {
+        const opp = lang === "en" ? opp_card_en : opp_card_az;
+        setOppCard(opp)
+    }, [lang])
+    
    
     return (
         <div className="opp-cards pt-2 pb-5">

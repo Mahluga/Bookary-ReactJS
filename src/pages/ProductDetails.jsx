@@ -128,12 +128,12 @@ const ProductDetails = () => {
                   <div className="resp-btns d-flex align-items-center">
                     <LinkContainer to={`/shop/${details.id}`}>
                       <a href="/" className={`text-decoration-none section-btn me-2 ${details.stock ? "" : "disable-btn"}`} onClick={() => { addItem(details, quantity); setShowCanvas(true); }}>
-                        <i className="fas fa-shopping-basket"></i>  <Link to='/cart'>&nbsp;{lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</Link>
+                        <i className="fas fa-shopping-basket"></i>  <Link className='text-decoration-none detail-btns' to='/cart'>&nbsp;{lang === "en" ? "Add to cart" : "Səbətə əlavə et"}</Link>
                       </a>
                     </LinkContainer>
-                    <Button variant="none" className="detail-wish d-flex align-items-center" onClick={wishClick}>
+                    <Button variant="none" className="detail-wish detail-btns d-flex align-items-center" onClick={wishClick}>
                       <i className={`fa-${wishStatus} fa-heart me-1`}></i>
-                      <Link to='/wishlist'>{lang === "en" ? "Add to wishlist" : "Bəyənilənlərə əlavə et"}</Link>
+                      <Link className='text-decoration-none detail-btns-wish' to='/wishlist'>{lang === "en" ? "Add to wishlist" : "Bəyənilənlərə əlavə et"}</Link>
                     </Button>
                   </div>
                 </div>

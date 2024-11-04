@@ -40,7 +40,16 @@
 @import './succesfulcheckout';
 
 .preloader{ 
-    background-color: grey;
+    background-color: $primary_orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: 100vh;
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    }
 }
 .mySwiper{
     overflow: hidden;

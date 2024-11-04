@@ -140,16 +140,12 @@
   }
 }
 
-.light{
  .question-part {
-     margin-top: 100px;
-
-     span {
-         color: hsl(147, 100%, 32%) !important;
-         font-size: 18px;
-         font-weight: 700;
-
-     }
+    //  margin-top: 100px;
+    //   width: 100vw !important;
+    padding-top: 30px;
+    max-width: 100%;
+    overflow: hidden; /* İçerik taşmasını önlemek için */
 
      h1 {
          text-align: center;
@@ -188,21 +184,16 @@
      }
 
  }
-}
+
 
 .dark{
  .question-part {
-     padding-top: 100px;
-     background-color: #151515;
+     padding-top: 30px;
+    max-width: 100%;
+    overflow: hidden;
+     background-color: $dark_bg;
 
      color: #fff !important;
-
-     span {
-         color: hsl(147, 100%, 32%) !important;
-         font-size: 18px;
-         font-weight: 700;
-
-     }
 
      h1 {
          text-align: center;
@@ -244,3 +235,5 @@
 
  }
 }
+
+

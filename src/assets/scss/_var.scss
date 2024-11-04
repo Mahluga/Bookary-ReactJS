@@ -40,6 +40,26 @@ $dark_bg: #282828;
     background-color: $primary_orange_hover;
     color: $milk_white;
   }
+  .detail-btns{
+    color: #ffffff !important;
+  }
+  .detail-btns-wish{
+    color: #000000 !important;
+  }
+  .btn-filter{
+    width: 60px;
+    height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: $primary_orange;
+    color: $white;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .btn-filter:hover{
+    background-color: $primary_orange_hover;
+    color: $white;
+  }
   /* width */
   // ::-webkit-scrollbar {
   //   width: 8px;

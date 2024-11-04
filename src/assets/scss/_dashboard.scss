@@ -109,11 +109,14 @@
       color: $white;
     }
     table {
+      background-color: $dark_bg !important;
       th {
         color: $white;
+        background-color: $dark_bg !important;
       }
       td {
         color: $light_grey;
+        background-color: $dark_bg !important;
       }
     }
   }

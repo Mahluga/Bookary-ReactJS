@@ -5,6 +5,7 @@ import { ModeContext } from '../context/ModeContext'
 import { LangContext } from '../context/LangContext'
 import { LinkContainer } from 'react-router-bootstrap'
 import { footer_az, footer_en } from '../data/langdata'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const [mode] = useContext(ModeContext);
@@ -50,41 +51,41 @@ const Footer = () => {
                             <div className="row">
                                 <div className="col-4 col-sm-4 col-md-4 resp-center">
                                     <h5 className="foot-title text-capitalize mb-3">{footInfo[1]}</h5>
-                                    <ul className='ps-0'>
-                                        <li className='list-unstyled mb-1'>
+                                    <ul className='ps-0 d-flex flex-column'>
+                                        <Link to="/about" className='list-unstyled text-decoration-none mb-1'>
                                             <a href="/" className='text-decoration-none'>{footInfo[2]}</a>
-                                        </li>
-                                        <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[3]}</a>
-                                        </li>
-                                        <li className='list-unstyled mb-1'>
+                                        </Link>
+                                        <Link to="/cart" className='list-unstyled text-decoration-none mb-1'>
+                                        <a href="/" className='text-decoration-none'>{footInfo[3]}</a>
+                                        </Link>
+                                        <Link to="/shop" className='list-unstyled text-decoration-none mb-1'>
                                             <a href="/" className='text-decoration-none'>{footInfo[4]}</a>
-                                        </li>
-                                        <li className='list-unstyled'>
+                                        </Link>
+                                        <Link to="/register" className='list-unstyled text-decoration-none mb-1'>
                                             <a href="/" className='text-decoration-none'>{footInfo[5]}</a>
-                                        </li>
+                                        </Link>
                                     </ul>
                                 </div>
                                 <div className="col-4 col-sm-4 col-md-4 resp-center">
                                     <h5 className="foot-title text-capitalize mb-3">{footInfo[6]}</h5>
                                     <ul className='ps-0'>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[7]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[7]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[8]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[8]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[9]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[9]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[10]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[10]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[11]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[11]}</p>
                                         </li>
                                         <li className='list-unstyled'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[12]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[12]}</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -92,19 +93,19 @@ const Footer = () => {
                                     <h5 className="foot-title text-capitalize mb-3">{footInfo[13]}</h5>
                                     <ul className='ps-0'>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[14]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[14]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[15]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[15]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[16]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[16]}</p>
                                         </li>
                                         <li className='list-unstyled mb-1'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[17]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[17]}</p>
                                         </li>
                                         <li className='list-unstyled'>
-                                            <a href="/" className='text-decoration-none'>{footInfo[18]}</a>
+                                            <p className='ft text-decoration-none'>{footInfo[18]}</p>
                                         </li>
                                     </ul>
                                 </div>
